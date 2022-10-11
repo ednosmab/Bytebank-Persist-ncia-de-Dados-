@@ -53,19 +53,31 @@ Future<int> save(Contact contact) async {
   // });
 }
 
-Future<List<Contact>> findAll() {
-  return getDatabase().then((db) {
-    return db.query('contacts').then((maps) {
-      final List<Contact> contacts = List.empty(growable: true);
-      for (Map<String, dynamic> map in maps) {
-        final Contact contact = Contact(
-          map['id'],
-          map['name'],
-          map['account_number'],
-        );
-        contacts.add(contact);
-      }
-      return contacts;
-    });
-  });
+Future<List<Contact>> findAll() async {
+  final Database db = await getDatabase();
+  final List<Map<String, dynamic>> result = await db.query('contacts');
+  final List<Contact> contacts = List.empty(growable: true);
+  for (Map<String, dynamic> row in result) {
+    final Contact contact = Contact(
+      row['id'],
+      row['name'],
+      row['account_number'],
+    );
+    contacts.add(contact);
+  }
+  return contacts;
+  // return getDatabase().then((db) {
+  //   return db.query('contacts').then((maps) {
+  //     final List<Contact> contacts = List.empty(growable: true);
+  //     for (Map<String, dynamic> map in maps) {
+  //       final Contact contact = Contact(
+  //         map['id'],
+  //         map['name'],
+  //         map['account_number'],
+  //       );
+  //       contacts.add(contact);
+  //     }
+  //     return contacts;
+  //   });
+  // });
 }
