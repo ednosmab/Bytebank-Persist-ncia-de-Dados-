@@ -9,7 +9,7 @@ Nesse curso foi realizado a construção de uma formulário que cria contatos qu
 Foi utilizado para realização dessa aplicação os plugins: Sqflite e path conforme recomendado pela documentação do Flutter: https://docs.flutter.dev/cookbook/persistence/sqlite
 <br>Versão do Flutter: 3.0.5
 
-Adentrando mais um pouco no mundo mágico do Flutter, pude aprender, nesse curso, a criar uma aplicação que persiste, salva os dados dentro do dispositivo do usuário.
+Adentrando mais um pouco no mundo mágico do Flutter, pude aprender, nesse curso, a criar uma aplicação que persiste, salva os dados dentro do dispositivo do usuário, utilizar a técnica do Async Await para operar em cima de requisições assíncronas.
 
 
 
