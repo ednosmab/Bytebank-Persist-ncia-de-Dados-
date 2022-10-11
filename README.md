@@ -6,10 +6,10 @@ Projeto desenvolvido durante o curso Persistência com Flutter: crie um app com 
 
 Nesse curso foi realizado a construção de uma formulário que cria contatos que são salvos de forma local  no dispositivo do usuário.
 
-Foi utilizado para realização dessa aplicação os plugins: Sqflite e path conforme a recomendado pela documentação do Flutter: https://docs.flutter.dev/cookbook/persistence/sqlite
+Foi utilizado para realização dessa aplicação os plugins: Sqflite e path conforme recomendado pela documentação do Flutter: https://docs.flutter.dev/cookbook/persistence/sqlite
 <br>Versão do Flutter: 3.0.5
 
-Com mais um passo, adentrando o mundo mágico do Flutter, pude aprender a criar uma aplicação que persiste, salva os dados dentro do dispositivo do usuário.
+Adentrando mais um pouco no mundo mágico do Flutter, pude aprender, nesse curso, a criar uma aplicação que persiste, salva os dados dentro do dispositivo do usuário.
 
 
 
