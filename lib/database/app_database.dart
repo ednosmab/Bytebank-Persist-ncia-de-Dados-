@@ -6,7 +6,7 @@ import 'package:path/path.dart';
 
 import '../models/contact.dart';
 
-Future<Database> createDatabase() async {
+Future<Database> getDatabase() async {
   final String path = join(await getDatabasesPath(), 'bytebank.db');
   return openDatabase(
     path,
@@ -39,17 +39,22 @@ Future<Database> createDatabase() async {
   // );
 }
 
-Future<int> save(Contact contact) {
-  return createDatabase().then((db) {
-    final Map<String, dynamic> contactMap = Map();
-    contactMap['name'] = contact.name;
-    contactMap['account_number'] = contact.accountNumber;
-    return db.insert('contacts', contactMap);
-  });
+Future<int> save(Contact contact) async {
+  final Database db = await getDatabase();
+  final Map<String, dynamic> contactMap = Map();
+  contactMap['name'] = contact.name;
+  contactMap['account_number'] = contact.accountNumber;
+  return db.insert('contacts', contactMap);
+  // return getDatabase().then((db) {
+  //   final Map<String, dynamic> contactMap = Map();
+  //   contactMap['name'] = contact.name;
+  //   contactMap['account_number'] = contact.accountNumber;
+  //   return db.insert('contacts', contactMap);
+  // });
 }
 
 Future<List<Contact>> findAll() {
-  return createDatabase().then((db) {
+  return getDatabase().then((db) {
     return db.query('contacts').then((maps) {
       final List<Contact> contacts = List.empty(growable: true);
       for (Map<String, dynamic> map in maps) {
