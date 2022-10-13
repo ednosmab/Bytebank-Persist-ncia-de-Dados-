@@ -53,10 +53,6 @@ class ContactsList extends StatelessWidget {
               builder: (context) => ContactForm(),
             ),
           );
-          // usando uma callback para exibir, a nivel de teste, no console os dados recebidos
-          // .then(
-          //   (newContact) => debugPrint(newContact.toString()),
-          // );
         },
         child: Icon(Icons.add),
       ),
