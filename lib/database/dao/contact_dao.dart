@@ -3,6 +3,11 @@ import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/database/app_database.dart';
 
 class ContactDao {
+  static const tableSql = 'CREATE TABLE contacts('
+      'id INTEGER PRIMARY KEY, '
+      'name TEXT, '
+      'account_number INTEGER)';
+
   Future<int> save(Contact contact) async {
     final Database db = await getDatabase();
     final Map<String, dynamic> contactMap = Map();
