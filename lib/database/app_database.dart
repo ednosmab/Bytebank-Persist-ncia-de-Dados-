@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bytebank/database/dao/contact_dao.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 

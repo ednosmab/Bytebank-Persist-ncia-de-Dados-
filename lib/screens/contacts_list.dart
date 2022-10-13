@@ -1,4 +1,3 @@
-import 'package:bytebank/database/app_database.dart';
 import 'package:bytebank/database/dao/contact_dao.dart';
 import 'package:bytebank/screens/contact_form.dart';
 import 'package:bytebank/models/contact.dart';
@@ -43,7 +42,6 @@ class ContactsList extends StatelessWidget {
                   },
                   itemCount: contacts.length,
                 );
-                break;
               default:
             }
             ;
