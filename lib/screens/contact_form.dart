@@ -1,4 +1,5 @@
 import 'package:bytebank/database/app_database.dart';
+import 'package:bytebank/database/dao/contact_dao.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/screens/contacts_list.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class _ContactForm extends State<ContactForm> {
   // Preparando os controllers para receber as informações enviadas de ContactList
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _accountController = TextEditingController();
+  final ContactDao _dao = ContactDao();
 
   @override
   Widget build(BuildContext context) {
@@ -63,12 +65,13 @@ class _ContactForm extends State<ContactForm> {
                             ? int.parse(_accountController.text)
                             : 0;
                     final Contact newContact = Contact(0, name, accountNumber);
-                    save(newContact).then(
-                      (id) => Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ContactsList()),
-                      ),
-                    );
+                    _dao.save(newContact).then(
+                          (id) => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ContactsList()),
+                          ),
+                        );
                   },
                   child: Text("Create"),
                   style: ElevatedButton.styleFrom(
